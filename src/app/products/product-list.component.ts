@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
     pageTitle:string = 'Product List';
+    imagewidth: number = 50;
+    imageMargin :number = 2;
+    showImage: boolean =false;
+    listFilter: string = 'car';
     products: any[] = [
         {
             "productId": 2,
@@ -30,5 +34,8 @@ export class ProductListComponent {
 
         }
     ];
+    toggleImage(): void{
+        this.showImage = !this.showImage;
+    }
 
 }
