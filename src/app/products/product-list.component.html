@@ -16,9 +16,8 @@
         </div>
         <div class='table-responsive '>
 
-            <table class='table '>
-                *ngIf='products && products.length '>
-                <theader>
+            <table class='table' *ngIf=' products && products.length '>
+                <thead>
                     <tr>
                         <th>
                             <button class='btn btn-primary ' (click)='toggleImage() '>{{showImage ? 'Hide ': 'Show '}}Image</button>
@@ -29,17 +28,19 @@
                         <th>Price</th>
                         <th>5 Stars Rating</th>
                     </tr>
-                </theader>
+                </thead>
                 <tbody>
-                    <tr *ngFor='let product of filteredproducts'>
+                    <tr *ngFor='let product of filteredProducts '>
                         <td>
-                            <img *ngIf='showImage ' [src]='product.imageUrl ' [title]='product.productName ' [style.width.px]='imageidth ' [style.margin.px]='imageMargin '>
+                            <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imagewidth ' [style.margin.px]='imageMargin '>
                         </td>
                         <td>{{ product.productName }}</td>
-                        <td>{{ product.productCode | lowercase | convertToSpace: '-'}}</td>
+                        <td>{{ product.productCode | lowercase | convertToSpaces: '-'}}</td>
                         <td>{{ product.releaseDate }}</td>
-                        <td>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</td>
-                        <td>{{ product.starRating }}</td>
+                        <td>{{ product.price | currency:'USD ':'symbol ':'1.2-2 ' }}</td>
+                        <td>
+                            <pm-star></pm-star>
+                        </td>
                     </tr>
                 </tbody>
             </table>

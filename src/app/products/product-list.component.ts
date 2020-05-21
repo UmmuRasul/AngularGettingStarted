@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
     showImage: boolean =false;
 
     _listFilter: string;
-    get lisFilter():string {
+    get listFilter():string {
         return this._listFilter;
     }
     set listFilter(value:string){
@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
             "productId": 2,
             "productName":"Garden Cart",
             "productCode":"GDN-0023",
-            "releasDate":"March 18, 2019",
+            "releaseDate":"March 18, 2019",
             "description":"15 gallon capacity rolling garden",
             "price":32.99,
             "starRating":4.2,
@@ -38,7 +38,7 @@ export class ProductListComponent implements OnInit {
             "productId": 2,
             "productName":"Garden Cart",
             "productCode":"GDN-0023",
-            "releasDate":"March 18, 2019",
+            "releaseDate":"March 18, 2019",
             "description":"15 gallon capacity rolling garden",
             "price":32.99,
             "starRating":4.2,
