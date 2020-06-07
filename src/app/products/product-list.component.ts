@@ -1,3 +1,4 @@
+import { ProductService } from './product.service';
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './product';
 
@@ -75,9 +76,8 @@ export class ProductListComponent implements OnInit {
         }
       ];
 
-    constructor() {
-        this.filteredProducts = this.products;
-        this.listFilter = 'cart';
+    constructor(private productService:ProductService) {
+    
     }
 
     onRatingClicked(message: string): void {
@@ -94,7 +94,8 @@ export class ProductListComponent implements OnInit {
         this.showImage = !this.showImage;
     }
     ngOnInit(): void {
-        console.log('In OnInit');
+        this.products = this.productService.getProducts();
+        this.filteredProducts = this.products;
     }
 
 }
